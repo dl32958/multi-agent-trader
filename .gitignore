@@ -1,11 +1,71 @@
 # Python-generated files
 __pycache__/
 *.py[oc]
+*.pyo
+*.pyd
 build/
 dist/
 wheels/
 *.egg-info
+*.egg
 
 # Virtual environments
 .venv
-.env
+.env*
+!.env.example
+
+# Database files
+accounts.db
+*.db
+*.sqlite
+*.sqlite3
+
+# Test files and coverage
+test_*.py
+*_test.py
+tests/
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+.cache/
+
+# Memory databases (for MCP memory server)
+memory/
+*.memory
+
+# AI model caches
+.cache/
+model_cache/
+
+# Jupyter notebooks
+.ipynb_checkpoints
+
+# Environment variables backup
+.env.backup
+.env.local
+.env.development
+.env.test
+.env.production
