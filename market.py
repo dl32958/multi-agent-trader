@@ -21,7 +21,7 @@ def is_market_open() -> bool:
     return market_status.market == "open"
 
 def get_all_share_prices_polygon_eod() -> dict[str, float]:
-    """With much thanks to student Reema R. for fixing the timezone issue with this!"""
+    """Obtain the closing prices of all stocks on the previous trading day from the Polygon API"""
     client = RESTClient(polygon_api_key)
 
     probe = client.get_previous_close_agg("SPY")[0]
@@ -31,7 +31,7 @@ def get_all_share_prices_polygon_eod() -> dict[str, float]:
     return {result.ticker: result.close for result in results}
 
 @lru_cache(maxsize=2)
-def get_market_for_prior_date(today):
+def get_market_for_prior_date(today) -> dict[str, float]:
     market_data = read_market(today)
     if not market_data:
         market_data = get_all_share_prices_polygon_eod()
@@ -46,12 +46,17 @@ def get_share_price_polygon_eod(symbol) -> float:
     Output:
         float: Closing price of the stock for the prior trading day.
                Returns 0.0 if the symbol is not found.
+
+    for free polygon plan
     """
     today = datetime.now().date().strftime("%Y-%m-%d")
     market_data = get_market_for_prior_date(today)
     return market_data.get(symbol, 0.0)
 
 def get_share_price_polygon_min(symbol) -> float:
+    """
+    for paid or realtime polygon plan
+    """
     client = RESTClient(polygon_api_key)
     result = client.get_snapshot_ticker("stocks", symbol)
     return result.min.close or result.prev_day.close

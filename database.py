@@ -93,6 +93,9 @@ def write_market(date: str, data: dict) -> None:
         conn.commit()
 
 def read_market(date: str) -> dict | None:
+    """
+    {symbol: price, ...}
+    """
     with sqlite3.connect(DB) as conn:
         cursor = conn.cursor()
         cursor.execute('SELECT data FROM market WHERE date = ?', (date,))
