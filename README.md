@@ -15,7 +15,7 @@ A multi-agent trading system that uses AI agents to simulate autonomous stock tr
 
 ## 🏗️ System Architecture
 
-![System Architecture](./docs/architecture.svg)
+![System Architecture](./docs/architecture1.svg)
 
 ## 🚀 Quick Start
 
