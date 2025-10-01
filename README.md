@@ -49,6 +49,7 @@ A multi-agent trading system that uses AI agents to simulate autonomous stock tr
 
 ## 🛠️ Technology Stack
 
+- **Agent Framework**: [OpenAI Agent SDK](https://github.com/openai/openai-python) for AI agent orchestration
 - **MCP Servers**: Built with [FastMCP](https://github.com/jlowin/fastmcp) for high-performance tool serving
 - **MCP Client**: Uses [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk) for agent communication
 - **AI Models**: Support for OpenAI, OpenRouter, DeepSeek, Google Gemini, and Grok
