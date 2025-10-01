@@ -47,6 +47,14 @@ A multi-agent trading system that uses AI agents to simulate autonomous stock tr
    uv run python trading_floor.py
    ```
 
+## 🛠️ Technology Stack
+
+- **MCP Servers**: Built with [FastMCP](https://github.com/jlowin/fastmcp) for high-performance tool serving
+- **MCP Client**: Uses [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk) for agent communication
+- **AI Models**: Support for OpenAI, OpenRouter, DeepSeek, Google Gemini, and Grok
+- **Database**: SQLite for data persistence
+- **Market Data**: Polygon.io API integration
+
 ## ⚙️ Configuration
 
 Create a `.env` file with the following variables:
